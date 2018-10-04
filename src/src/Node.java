@@ -6,6 +6,7 @@ public class Node{
     private ArrayList<Node> connections;
     private Boolean visited;
     private Node parent;
+    private CopyNode pointerNode;
     private char symbol;
     private int cost;
 
@@ -69,4 +70,20 @@ public class Node{
     public Node getChild(int i) {
         return connections.get(i);
     }
+
+    public boolean getVisited() {return visited;}
+
+    public CopyNode getPointer()
+    {
+        return pointerNode;
+    }
+    public void setPointer(CopyNode inNode)
+    {
+        pointerNode = inNode;
+    }
+    public void setUnvisited()
+    {
+        visited = false;
+    }
+
 }

@@ -239,6 +239,23 @@ public class Maze{
         }
     }
 
+    public void resetMaze()
+    {
+        for(int i = 0; i < maze.length; i++)
+        {
+            for(int j = 0; j < maze[0].length; j++)
+            {
+                maze[i][j].setPointer(null);
+                maze[i][j].setUnvisited();
+            }
+        }
+        //change everything back to unvisited and delete CopyNode pointers
+    }
+    public Node[][] getMaze()
+    {
+        return maze;
+    }
+
     //set search type
     // change search var to whichever search is desired
     public void setSearch(IAlgorithm s){

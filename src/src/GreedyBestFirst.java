@@ -53,6 +53,7 @@ public class GreedyBestFirst implements IAlgorithm{
             sol = sol.getParent();
         }
         maze.printMaze();
+        System.out.println("Path weight: " + endMaze.getPointer().getGScore());
 
     }
     public void pushNode(CopyNode inNode, Stack<CopyNode> frontier)

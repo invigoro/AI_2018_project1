@@ -25,6 +25,11 @@ public class AStar implements IAlgorithm{
                             //children.get(i).getPointer().setGScore(1 + tempNode.getGScore());
                             //children.get(i).getPointer().f(endMaze);
                             pushNode(children.get(i).getPointer(), frontier);
+                            /*Iterator<CopyNode> iter = frontier.iterator();
+            while(iter.hasNext()){
+                CopyNode tempnode = iter.next();
+                tempnode.setGScore(tempnode.recalcGScore());
+                 }*/
                         }
                     } else {
                         children.get(i).setVisited();
@@ -51,6 +56,7 @@ public class AStar implements IAlgorithm{
             sol = sol.getParent();
         }
         maze.printMaze();
+        System.out.println("Path weight: " + endMaze.getPointer().getGScore());
 
     }
     public void pushNode(CopyNode inNode, Stack<CopyNode> frontier)

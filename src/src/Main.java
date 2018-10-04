@@ -12,5 +12,12 @@ public class Main{
         System.out.println("solved Maze: ");
         test.printMaze();
 
+        Maze test2 = new Maze("src/src/largeMaze.txt");
+        test2.buildGraph();
+        test2.setSearch(new GreedyBestFirst());
+        test2.search.search(test2);
+        System.out.println("Solved Maze: ");
+        test2.printMaze();
+
     }
 }
